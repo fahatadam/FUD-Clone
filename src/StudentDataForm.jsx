@@ -56,7 +56,7 @@ export default function StudentDataForm({ onBack }) {
               <td className="sdf-lbl">Last Name:</td>
               <td className="sdf-val">Rahama</td>
               <td className="sdf-lbl">Registration Number:</td>
-              <td className="sdf-val sdf-val-bold">FCP/CIT/24/2001</td>
+              <td className="sdf-val sdf-val-bold">FCP/CIT/25/2001</td>
             </tr>
             <tr>
               <td className="sdf-lbl">Date of Birth:</td>
@@ -104,19 +104,19 @@ export default function StudentDataForm({ onBack }) {
               <td className="sdf-lbl">Year of Admission:</td>
               <td className="sdf-val">2025/2026</td>
               <td className="sdf-lbl">Phone Number:</td>
-              <td className="sdf-val">09156534485</td>
+              <td className="sdf-val">07062668830</td>
             </tr>
             <tr>
               <td className="sdf-lbl">Email:</td>
-              <td className="sdf-val" colSpan="3">abubakar.hamza@gmail.com</td>
+              <td className="sdf-val" colSpan="3">Ahrahama102@gmail.com</td>
             </tr>
             <tr>
               <td className="sdf-lbl">Permanent Home Address:</td>
-              <td className="sdf-val" colSpan="3">Unguwar Rimi, Tilden Fulani, Toro Local Government Area, Bauchi State</td>
+              <td className="sdf-val" colSpan="3">C8, Danjuma Goje Street Bauchi</td>
             </tr>
             <tr>
               <td className="sdf-lbl">Contact Address:</td>
-              <td className="sdf-val" colSpan="3">Unguwar Rimi, Tilden Fulani, Toro Local Government Area, Bauchi State</td>
+              <td className="sdf-val" colSpan="3">C8, Danjuma Goje Street Bauchi</td>
             </tr>
             <tr>
               <td className="sdf-lbl">Last School Attended and Date:</td>
@@ -128,25 +128,25 @@ export default function StudentDataForm({ onBack }) {
             </tr>
             <tr>
               <td className="sdf-lbl">Name of Next of Kin:</td>
-              <td className="sdf-val">Nasir Hamza</td>
+              <td className="sdf-val">Ukasha Hamza Rahama</td>
               <td className="sdf-lbl">Next of Kin Phone:</td>
-              <td className="sdf-val">09156534485</td>
+              <td className="sdf-val">08036474000</td>
             </tr>
             <tr>
               <td className="sdf-lbl">Next of Kin Address:</td>
-              <td className="sdf-val">Unguwar Rimi, Tilden Fulani, Toro Local Government Area, Bauchi State</td>
+              <td className="sdf-val">C8, Danjuma Goje Street Bauchi</td>
               <td className="sdf-lbl">Next of Kin Email:</td>
-              <td className="sdf-val">nasirhamza573@gmail.com</td>
+              <td className="sdf-val">uhrahama@gmail.com</td>
             </tr>
             <tr>
               <td className="sdf-lbl">Name of Sponsor:</td>
-              <td className="sdf-val">Adamu Abdullahi</td>
+              <td className="sdf-val">Ukasha Hamza Rahama</td>
               <td className="sdf-lbl">Sponsor's Phone Number:</td>
-              <td className="sdf-val">08062722871</td>
+              <td className="sdf-val">08036474000</td>
             </tr>
             <tr>
               <td className="sdf-lbl">Sponsor Address:</td>
-              <td className="sdf-val" colSpan="3">Unguwar Rimi, Tilden Fulani, Toro Local Government Area, Bauchi State</td>
+              <td className="sdf-val" colSpan="3">C8, Danjuma Goje Street Bauchi</td>
             </tr>
           </tbody>
         </table>

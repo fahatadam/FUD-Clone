@@ -5,29 +5,9 @@ export default function Transcript({ onBack }) {
     window.print()
   }
 
-  const firstSemesterCourses = [
-    { sn: 1, code: 'COS 201', title: 'COMPUTER PROGRAMMING I', cu: 3, score: 45, g: 'D', gp: 2, wgp: 6 },
-    { sn: 2, code: 'FUD CIT 201', title: 'INTRO. TO SOFTWARE ENGINEERING', cu: 3, score: 51, g: 'C', gp: 3, wgp: 9 },
-    { sn: 3, code: 'FUD CIT 209', title: 'COMPUTER HARDWARE REPAIRS/MAINTENANCE', cu: 2, score: 60, g: 'B', gp: 4, wgp: 8 },
-    { sn: 4, code: 'GST212', title: 'PHILOSOPHY, LOGIC AND HUMAN EXISTENCE', cu: 2, score: 43, g: 'E', gp: 1, wgp: 2 },
-    { sn: 5, code: 'IFT 203', title: 'INTRO. TO WEB TECHNOLOGIES', cu: 2, score: 57, g: 'C', gp: 3, wgp: 6 },
-    { sn: 6, code: 'IFT 205', title: 'INTRO. TO INFORMATION TECHNOLOGY', cu: 2, score: 45, g: 'D', gp: 2, wgp: 4 },
-    { sn: 7, code: 'IFT 211', title: 'DIGITAL LOGIC DESIGN', cu: 2, score: 40, g: 'E', gp: 1, wgp: 2 },
-  ]
-
-  const secondSemesterCourses = [
-    { sn: 1, code: 'COS 202', title: 'COMPUTER PROGRAMMING II', cu: 3, score: 60, g: 'B', gp: 4, wgp: 12 },
-    { sn: 2, code: 'FUD CIT 206', title: 'DIGITAL FORENSICS', cu: 3, score: 53, g: 'C', gp: 3, wgp: 9 },
-    { sn: 3, code: 'FUD CIT 208', title: 'BUSINESS DATA ANALYSIS', cu: 3, score: 57, g: 'C', gp: 3, wgp: 9 },
-    { sn: 4, code: 'FUD CIT 210', title: 'SYSTEM ANALYSIS & DESIGN', cu: 3, score: 50, g: 'C', gp: 3, wgp: 9 },
-    { sn: 5, code: 'GST 223', title: 'INTRODUCTION TO ENTREPRENEURSHIP STUDIES', cu: 2, score: 45, g: 'D', gp: 2, wgp: 4 },
-    { sn: 6, code: 'IFT 212', title: 'COMPUTER ARCHITECTURE & ORGANIZATION', cu: 2, score: 48, g: 'D', gp: 2, wgp: 4 },
-    { sn: 7, code: 'INS-202', title: 'HUMAN COMPUTER INTERACTION', cu: 2, score: 46, g: 'D', gp: 2, wgp: 4 },
-  ]
-
   return (
     <div className="tr-wrapper">
-      {/* ── Action Buttons ── */}
+      {/* ── Top Action Buttons (Hidden on Print) ── */}
       <div className="tr-actions">
         <button className="tr-btn tr-btn-print" onClick={handlePrint}>
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -135,18 +115,76 @@ export default function Transcript({ onBack }) {
                 </tr>
               </thead>
               <tbody>
-                {firstSemesterCourses.map(c => (
-                  <tr key={c.sn}>
-                    <td className="tr-c-center">{c.sn}</td>
-                    <td>{c.code}</td>
-                    <td>{c.title}</td>
-                    <td className="tr-c-center">{c.cu}</td>
-                    <td className="tr-c-center">{c.score}</td>
-                    <td className="tr-c-center">{c.g}</td>
-                    <td className="tr-c-center">{c.gp}</td>
-                    <td className="tr-c-center">{c.wgp}</td>
-                  </tr>
-                ))}
+                <tr>
+                  <td className="tr-c-center">1</td>
+                  <td>COS 201</td>
+                  <td>COMPUTER PROGRAMMING I</td>
+                  <td className="tr-c-center">3</td>
+                  <td className="tr-c-center">45</td>
+                  <td className="tr-c-center">D</td>
+                  <td className="tr-c-center">2</td>
+                  <td className="tr-c-center">6</td>
+                </tr>
+                <tr>
+                  <td className="tr-c-center">2</td>
+                  <td>FUD CIT<br/>201</td>
+                  <td>INTRO. TO SOFTWARE ENGINEERING</td>
+                  <td className="tr-c-center">3</td>
+                  <td className="tr-c-center">51</td>
+                  <td className="tr-c-center">C</td>
+                  <td className="tr-c-center">3</td>
+                  <td className="tr-c-center">9</td>
+                </tr>
+                <tr>
+                  <td className="tr-c-center">3</td>
+                  <td>FUD CIT<br/>209</td>
+                  <td>COMPUTER HARDWARE<br/>REPAIRS/MAINTENANCE</td>
+                  <td className="tr-c-center">2</td>
+                  <td className="tr-c-center">60</td>
+                  <td className="tr-c-center">B</td>
+                  <td className="tr-c-center">4</td>
+                  <td className="tr-c-center">8</td>
+                </tr>
+                <tr>
+                  <td className="tr-c-center">4</td>
+                  <td>GST212</td>
+                  <td>PHILOSOPHY, LOGIC AND HUMAN<br/>EXISTENCE</td>
+                  <td className="tr-c-center">2</td>
+                  <td className="tr-c-center">43</td>
+                  <td className="tr-c-center">E</td>
+                  <td className="tr-c-center">1</td>
+                  <td className="tr-c-center">2</td>
+                </tr>
+                <tr>
+                  <td className="tr-c-center">5</td>
+                  <td>IFT 203</td>
+                  <td>INTRO. TO WEB TECHNOLOGIES</td>
+                  <td className="tr-c-center">2</td>
+                  <td className="tr-c-center">57</td>
+                  <td className="tr-c-center">C</td>
+                  <td className="tr-c-center">3</td>
+                  <td className="tr-c-center">6</td>
+                </tr>
+                <tr>
+                  <td className="tr-c-center">6</td>
+                  <td>IFT 205</td>
+                  <td>INTRO. TO INFORMATION TECHNOLOGY</td>
+                  <td className="tr-c-center">2</td>
+                  <td className="tr-c-center">45</td>
+                  <td className="tr-c-center">D</td>
+                  <td className="tr-c-center">2</td>
+                  <td className="tr-c-center">4</td>
+                </tr>
+                <tr>
+                  <td className="tr-c-center">7</td>
+                  <td>IFT 211</td>
+                  <td>DIGITAL LOGIC DESIGN</td>
+                  <td className="tr-c-center">2</td>
+                  <td className="tr-c-center">40</td>
+                  <td className="tr-c-center">E</td>
+                  <td className="tr-c-center">1</td>
+                  <td className="tr-c-center">2</td>
+                </tr>
                 <tr className="tr-total-row">
                   <td colSpan="3" className="tr-total-label">Total:</td>
                   <td className="tr-c-center">16</td>
@@ -184,31 +222,89 @@ export default function Transcript({ onBack }) {
                 </tr>
               </thead>
               <tbody>
-                {secondSemesterCourses.map(c => (
-                  <tr key={c.sn}>
-                    <td className="tr-c-center">{c.sn}</td>
-                    <td>{c.code}</td>
-                    <td>{c.title}</td>
-                    <td className="tr-c-center">{c.cu}</td>
-                    <td className="tr-c-center">{c.score}</td>
-                    <td className="tr-c-center">{c.g}</td>
-                    <td className="tr-c-center">{c.gp}</td>
-                    <td className="tr-c-center">{c.wgp}</td>
-                  </tr>
-                ))}
+                <tr>
+                  <td className="tr-c-center">1</td>
+                  <td>COS 202</td>
+                  <td>COMPUTER PROGRAMMING II</td>
+                  <td className="tr-c-center">3</td>
+                  <td className="tr-c-center">47</td>
+                  <td className="tr-c-center">D</td>
+                  <td className="tr-c-center">2</td>
+                  <td className="tr-c-center">6</td>
+                </tr>
+                <tr>
+                  <td className="tr-c-center">2</td>
+                  <td>FUD CIT<br/>206</td>
+                  <td>DIGITAL FORENSICS</td>
+                  <td className="tr-c-center">3</td>
+                  <td className="tr-c-center">53</td>
+                  <td className="tr-c-center">C</td>
+                  <td className="tr-c-center">3</td>
+                  <td className="tr-c-center">9</td>
+                </tr>
+                <tr>
+                  <td className="tr-c-center">3</td>
+                  <td>FUD CIT<br/>208</td>
+                  <td>BUSINESS DATA ANALYSIS</td>
+                  <td className="tr-c-center">3</td>
+                  <td className="tr-c-center">57</td>
+                  <td className="tr-c-center">C</td>
+                  <td className="tr-c-center">3</td>
+                  <td className="tr-c-center">9</td>
+                </tr>
+                <tr>
+                  <td className="tr-c-center">4</td>
+                  <td>FUD CIT<br/>210</td>
+                  <td>SYSTEM ANALYSIS &amp; DESIGN</td>
+                  <td className="tr-c-center">3</td>
+                  <td className="tr-c-center">40</td>
+                  <td className="tr-c-center">E</td>
+                  <td className="tr-c-center">1</td>
+                  <td className="tr-c-center">3</td>
+                </tr>
+                <tr>
+                  <td className="tr-c-center">5</td>
+                  <td>GST 223</td>
+                  <td>INTRODUCTION TO ENTREPRENEURSHIP<br/>STUDIES</td>
+                  <td className="tr-c-center">2</td>
+                  <td className="tr-c-center">55</td>
+                  <td className="tr-c-center">C</td>
+                  <td className="tr-c-center">3</td>
+                  <td className="tr-c-center">6</td>
+                </tr>
+                <tr>
+                  <td className="tr-c-center">6</td>
+                  <td>IFT 212</td>
+                  <td>COMPUTER ARCHITECTURE &amp;<br/>ORGANIZATION</td>
+                  <td className="tr-c-center">2</td>
+                  <td className="tr-c-center">40</td>
+                  <td className="tr-c-center">E</td>
+                  <td className="tr-c-center">1</td>
+                  <td className="tr-c-center">2</td>
+                </tr>
+                <tr>
+                  <td className="tr-c-center">7</td>
+                  <td>INS-202</td>
+                  <td>HUMAN COMPUTER INTERACTION</td>
+                  <td className="tr-c-center">2</td>
+                  <td className="tr-c-center">41</td>
+                  <td className="tr-c-center">E</td>
+                  <td className="tr-c-center">1</td>
+                  <td className="tr-c-center">2</td>
+                </tr>
                 <tr className="tr-total-row">
                   <td colSpan="3" className="tr-total-label">Total:</td>
                   <td className="tr-c-center">18</td>
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td className="tr-c-center">51</td>
+                  <td className="tr-c-center">37</td>
                 </tr>
               </tbody>
             </table>
             <div className="tr-gpa-box">
-              <span>GPA: 2.83</span>
-              <span>CGPA: 2.56</span>
+              <span>GPA: 2.06</span>
+              <span>CGPA: 2.18</span>
             </div>
           </div>
         </section>

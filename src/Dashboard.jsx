@@ -252,7 +252,7 @@ function TopBar({ toggle }) {
           <span className="db-top-avatar">
             <IcUserTie />
           </span>
-          <span className="db-top-regno">FCP/CIT/24/2001</span>
+          <span className="db-top-regno">FCP/CIT/25/2001</span>
           <IcChevDown size={12} />
         </div>
       </header>
@@ -272,7 +272,7 @@ function Body({ onOpenDataForm }) {
         {/* Welcome Card */}
         <div className="card wc-card">
           <p className="wc-name">
-            Welcome, <em className="wc-name-em">Abubakar Hamza Rahama (FCP/CIT/24/2001)</em>
+            Welcome, <em className="wc-name-em">Abubakar Hamza Rahama (FCP/CIT/25/2001)</em>
           </p>
           <div className="wc-row">
             <div className="wc-status">
