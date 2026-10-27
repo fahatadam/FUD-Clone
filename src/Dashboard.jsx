@@ -219,7 +219,7 @@ function TopBar({ toggle }) {
 /* ══════════════════════════════════════
    DASHBOARD BODY
 ══════════════════════════════════════ */
-function Body() {
+function Body({ onOpenDataForm }) {
   return (
     <div className="db-body">
       {/* ── Main column ── */}
@@ -234,7 +234,15 @@ function Body() {
             <div className="wc-status">
               Student Status: <strong className="wc-status-val">Active</strong>
             </div>
-            <a href="#" className="wc-form" onClick={e => e.preventDefault()}>
+            <a
+              href="#"
+              className="wc-form"
+              id="fud-open-dataform"
+              onClick={e => {
+                e.preventDefault()
+                if (onOpenDataForm) onOpenDataForm()
+              }}
+            >
               <IcDoc /> <span>Student Data Form</span>
             </a>
           </div>
@@ -287,7 +295,7 @@ function Body() {
               </div>
               <div className="ov-cgpa-sub">
                 First Semester, 2025/2026<br />
-                GPA: <strong>4.32</strong> · Units earned: <strong>37</strong>
+                GPA: <strong>2.31</strong> · Units earned: <strong>16</strong>
               </div>
             </div>
           </div>
@@ -335,7 +343,7 @@ function Footer() {
 /* ══════════════════════════════════════
    DASHBOARD ROOT
 ══════════════════════════════════════ */
-export default function Dashboard({ onLogout }) {
+export default function Dashboard({ onLogout, onOpenDataForm }) {
   const [open, setOpen]     = useState(false)
   const [active, setActive] = useState('home')
 
@@ -349,7 +357,7 @@ export default function Dashboard({ onLogout }) {
       />
       <div className="db-main">
         <TopBar toggle={() => setOpen(v => !v)} />
-        <Body />
+        <Body onOpenDataForm={onOpenDataForm} />
         <Footer />
       </div>
     </div>

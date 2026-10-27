@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './index.css'
 import Dashboard from './Dashboard.jsx'
+import StudentDataForm from './StudentDataForm.jsx'
 
 /* ─── Inline SVG Icons ─── */
 const IconUser = () => (
@@ -280,7 +281,16 @@ export default function App() {
   const [page, setPage] = useState('login')
 
   if (page === 'dashboard') {
-    return <Dashboard onLogout={() => setPage('login')} />
+    return (
+      <Dashboard
+        onLogout={() => setPage('login')}
+        onOpenDataForm={() => setPage('student-data-form')}
+      />
+    )
+  }
+
+  if (page === 'student-data-form') {
+    return <StudentDataForm onBack={() => setPage('dashboard')} />
   }
 
   return (
