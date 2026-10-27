@@ -279,7 +279,28 @@ function LoginCard({ onLogin }) {
 
 /* ─── Root App ─── */
 export default function App() {
-  const [page, setPage] = useState('login')
+  const [page, setPageState] = useState(() => {
+    try {
+      const saved = localStorage.getItem('fud_portal_page')
+      if (saved && ['dashboard', 'student-data-form', 'transcript'].includes(saved)) {
+        return saved
+      }
+      return 'login'
+    } catch {
+      return 'login'
+    }
+  })
+
+  const setPage = (next) => {
+    try {
+      if (next === 'login') {
+        localStorage.removeItem('fud_portal_page')
+      } else {
+        localStorage.setItem('fud_portal_page', next)
+      }
+    } catch {}
+    setPageState(next)
+  }
 
   if (page === 'dashboard') {
     return (
