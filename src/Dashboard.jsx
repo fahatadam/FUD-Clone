@@ -208,7 +208,7 @@ function TopBar({ toggle }) {
           <span className="db-top-avatar">
             <IcUserTie />
           </span>
-          <span className="db-top-regno">FCP/CSE/23/1044</span>
+          <span className="db-top-regno">FCP/CIT/24/2001</span>
           <IcChevDown size={12} />
         </div>
       </header>
@@ -228,7 +228,7 @@ function Body() {
         {/* Welcome Card */}
         <div className="card wc-card">
           <p className="wc-name">
-            Welcome, <em className="wc-name-em">Fahat Adam (FCP/CSE/23/1044)</em>
+            Welcome, <em className="wc-name-em">Abubakar Hamza Rahama (FCP/CIT/24/2001)</em>
           </p>
           <div className="wc-row">
             <div className="wc-status">
@@ -260,8 +260,8 @@ function Body() {
               <div className="ov-lbl">SCHOOL FEES (2025/2026)</div>
               <div className="ov-paid">Paid</div>
               <div className="ov-amt">
-                Amount due: <strong>₦94,000</strong><br />
-                Amount paid: <strong>₦94,000</strong>
+                Amount due: <strong>₦129,000</strong><br />
+                Amount paid: <strong>₦129,000</strong>
               </div>
             </div>
 
@@ -269,12 +269,12 @@ function Body() {
             <div className="ov-card ov-courses">
               <div className="ov-lbl">COURSES REGISTERED (2025/2026)</div>
               <div className="ov-count">
-                <span className="ov-count-val">15</span>
+                <span className="ov-count-val">14</span>
                 <span className="ov-count-sub">courses</span>
               </div>
               <div className="ov-csub">
-                First semester: <strong>14</strong> (37 units)<br />
-                Second semester: <strong>1</strong> (6 units)
+                First semester: <strong>7</strong> (16 units)<br />
+                Second semester: <strong>7</strong> (18 units)
               </div>
             </div>
 
@@ -298,14 +298,14 @@ function Body() {
       <div className="db-profile-card">
         <img
           src="/student-passport.png"
-          alt="Fahat Adam"
+          alt="Abubakar Hamza Rahama"
           className="db-profile-img"
         />
-        <h4 className="db-profile-name">Fahat Adam</h4>
+        <h4 className="db-profile-name">Abubakar Hamza Rahama</h4>
         <div className="db-profile-rows">
           <div className="db-p-row">
             <span className="db-p-label">Department:</span>
-            <strong className="db-p-val">SOFTWARE ENGINEERING</strong>
+            <strong className="db-p-val">INFORMATION TECHNOLOGY</strong>
           </div>
           <div className="db-p-row">
             <span className="db-p-label">Level:</span>
