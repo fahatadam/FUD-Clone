@@ -227,17 +227,17 @@ export default function Transcript({ onBack }) {
                   <td>COS 202</td>
                   <td>COMPUTER PROGRAMMING II</td>
                   <td className="tr-c-center">3</td>
-                  <td className="tr-c-center">47</td>
-                  <td className="tr-c-center">D</td>
-                  <td className="tr-c-center">2</td>
-                  <td className="tr-c-center">6</td>
+                  <td className="tr-c-center">60</td>
+                  <td className="tr-c-center">B</td>
+                  <td className="tr-c-center">4</td>
+                  <td className="tr-c-center">12</td>
                 </tr>
                 <tr>
                   <td className="tr-c-center">2</td>
                   <td>FUD CIT<br/>206</td>
                   <td>DIGITAL FORENSICS</td>
                   <td className="tr-c-center">3</td>
-                  <td className="tr-c-center">53</td>
+                  <td className="tr-c-center">50</td>
                   <td className="tr-c-center">C</td>
                   <td className="tr-c-center">3</td>
                   <td className="tr-c-center">9</td>
@@ -247,7 +247,7 @@ export default function Transcript({ onBack }) {
                   <td>FUD CIT<br/>208</td>
                   <td>BUSINESS DATA ANALYSIS</td>
                   <td className="tr-c-center">3</td>
-                  <td className="tr-c-center">57</td>
+                  <td className="tr-c-center">50</td>
                   <td className="tr-c-center">C</td>
                   <td className="tr-c-center">3</td>
                   <td className="tr-c-center">9</td>
@@ -257,40 +257,40 @@ export default function Transcript({ onBack }) {
                   <td>FUD CIT<br/>210</td>
                   <td>SYSTEM ANALYSIS &amp; DESIGN</td>
                   <td className="tr-c-center">3</td>
-                  <td className="tr-c-center">40</td>
-                  <td className="tr-c-center">E</td>
-                  <td className="tr-c-center">1</td>
+                  <td className="tr-c-center">50</td>
+                  <td className="tr-c-center">C</td>
                   <td className="tr-c-center">3</td>
+                  <td className="tr-c-center">9</td>
                 </tr>
                 <tr>
                   <td className="tr-c-center">5</td>
                   <td>GST 223</td>
                   <td>INTRODUCTION TO ENTREPRENEURSHIP<br/>STUDIES</td>
                   <td className="tr-c-center">2</td>
-                  <td className="tr-c-center">55</td>
-                  <td className="tr-c-center">C</td>
-                  <td className="tr-c-center">3</td>
-                  <td className="tr-c-center">6</td>
+                  <td className="tr-c-center">45</td>
+                  <td className="tr-c-center">D</td>
+                  <td className="tr-c-center">2</td>
+                  <td className="tr-c-center">4</td>
                 </tr>
                 <tr>
                   <td className="tr-c-center">6</td>
                   <td>IFT 212</td>
                   <td>COMPUTER ARCHITECTURE &amp;<br/>ORGANIZATION</td>
                   <td className="tr-c-center">2</td>
-                  <td className="tr-c-center">40</td>
-                  <td className="tr-c-center">E</td>
-                  <td className="tr-c-center">1</td>
+                  <td className="tr-c-center">45</td>
+                  <td className="tr-c-center">D</td>
                   <td className="tr-c-center">2</td>
+                  <td className="tr-c-center">4</td>
                 </tr>
                 <tr>
                   <td className="tr-c-center">7</td>
                   <td>INS-202</td>
                   <td>HUMAN COMPUTER INTERACTION</td>
                   <td className="tr-c-center">2</td>
-                  <td className="tr-c-center">41</td>
-                  <td className="tr-c-center">E</td>
-                  <td className="tr-c-center">1</td>
+                  <td className="tr-c-center">50</td>
+                  <td className="tr-c-center">D</td>
                   <td className="tr-c-center">2</td>
+                  <td className="tr-c-center">4</td>
                 </tr>
                 <tr className="tr-total-row">
                   <td colSpan="3" className="tr-total-label">Total:</td>
@@ -298,13 +298,13 @@ export default function Transcript({ onBack }) {
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td className="tr-c-center">37</td>
+                  <td className="tr-c-center">51</td>
                 </tr>
               </tbody>
             </table>
             <div className="tr-gpa-box">
-              <span>GPA: 2.06</span>
-              <span>CGPA: 2.18</span>
+              <span>GPA: 2.83</span>
+              <span>CGPA: 2.59</span>
             </div>
           </div>
         </section>
