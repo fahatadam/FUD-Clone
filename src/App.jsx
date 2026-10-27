@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './index.css'
 import Dashboard from './Dashboard.jsx'
 import StudentDataForm from './StudentDataForm.jsx'
+import Transcript from './Transcript.jsx'
 
 /* ─── Inline SVG Icons ─── */
 const IconUser = () => (
@@ -285,12 +286,17 @@ export default function App() {
       <Dashboard
         onLogout={() => setPage('login')}
         onOpenDataForm={() => setPage('student-data-form')}
+        onOpenTranscript={() => setPage('transcript')}
       />
     )
   }
 
   if (page === 'student-data-form') {
     return <StudentDataForm onBack={() => setPage('dashboard')} />
+  }
+
+  if (page === 'transcript') {
+    return <Transcript onBack={() => setPage('dashboard')} />
   }
 
   return (

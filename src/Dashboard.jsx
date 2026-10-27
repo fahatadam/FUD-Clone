@@ -137,7 +137,7 @@ const NAV = [
   { id: 'courses',      label: 'Course\nRegistration', icon: <IcFolderCards />,
     children: ['Register Courses', 'Registered Courses', 'Course Add/Drop'] },
   { id: 'results',      label: 'My Results',           icon: <IcDocLines />,
-    children: ['View Results'] },
+    children: ['View Results', 'Transcript'] },
   { id: 'siwes',        label: 'SIWES',                icon: <IcDocLines />,
     children: ['SIWES Details', 'SIWES Downloads', 'SIWES Complaints'] },
   { id: 'examcard',     label: 'Exam Card',            icon: <IcFolderCards />, },
@@ -148,7 +148,7 @@ const NAV = [
 /* ══════════════════════════════════════
    SIDEBAR
 ══════════════════════════════════════ */
-function Sidebar({ open, close, active, setActive }) {
+function Sidebar({ open, close, active, setActive, onOpenTranscript }) {
   const [expanded, setExpanded] = useState({
     summer: false,
     courses: false,
@@ -215,6 +215,9 @@ function Sidebar({ open, close, active, setActive }) {
                             e.preventDefault()
                             setActiveSub(c)
                             close()
+                            if (c === 'Transcript' && onOpenTranscript) {
+                              onOpenTranscript()
+                            }
                           }}
                         >
                           {c}
@@ -384,7 +387,7 @@ function Footer() {
 /* ══════════════════════════════════════
    DASHBOARD ROOT
 ══════════════════════════════════════ */
-export default function Dashboard({ onLogout, onOpenDataForm }) {
+export default function Dashboard({ onLogout, onOpenDataForm, onOpenTranscript }) {
   const [open, setOpen]     = useState(false)
   const [active, setActive] = useState('home')
 
@@ -395,6 +398,7 @@ export default function Dashboard({ onLogout, onOpenDataForm }) {
         close={() => setOpen(false)}
         active={active}
         setActive={setActive}
+        onOpenTranscript={onOpenTranscript}
       />
       <div className="db-main">
         <TopBar toggle={() => setOpen(v => !v)} />

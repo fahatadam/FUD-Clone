@@ -1,0 +1,306 @@
+/* ═══════════════════════════════════════════
+   FUD MyPortal — Transcripts of Academic Record
+   Exact replica of official FUD Transcript PDF
+═══════════════════════════════════════════ */
+
+.tr-wrapper {
+  min-height: 100vh;
+  background: #eef2f6;
+  padding: 24px 16px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Top Action Buttons ── */
+.tr-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+}
+
+.tr-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.tr-btn-print {
+  background: #0d6938;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(13, 105, 56, 0.25);
+}
+.tr-btn-print:hover {
+  background: #09552c;
+  transform: translateY(-1px);
+}
+
+.tr-btn-back {
+  background: #e2e8f0;
+  color: #334155;
+}
+.tr-btn-back:hover {
+  background: #cbd5e1;
+  color: #0f172a;
+}
+
+/* ── The Document Sheet ── */
+.tr-sheet {
+  background: #ffffff;
+  width: 100%;
+  max-width: 920px;
+  padding: 32px 36px 40px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  border: 1px solid #cbd5e1;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ── */
+.tr-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.tr-logo {
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
+  margin-bottom: 6px;
+}
+
+.tr-title-main {
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin: 0 0 2px 0;
+  color: #000000;
+}
+
+.tr-title-sub {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 0 2px 0;
+  color: #000000;
+}
+
+.tr-title-record {
+  font-size: 15px;
+  font-weight: 800;
+  margin: 0;
+  color: #000000;
+  letter-spacing: 0.3px;
+}
+
+/* ── Student Bio Box ── */
+.tr-bio-box {
+  border: 1px solid #000000;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  padding: 6px 14px;
+  font-size: 11px;
+  line-height: 1.65;
+  font-weight: 700;
+  margin-bottom: 18px;
+  background: #ffffff;
+}
+
+.tr-bio-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.tr-bio-row {
+  display: flex;
+}
+
+.tr-bio-label {
+  font-weight: 800;
+}
+
+.tr-bio-val {
+  font-weight: 700;
+  margin-left: 4px;
+}
+
+/* ── Semesters Side-by-Side Grid ── */
+.tr-semesters-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.tr-semester-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.tr-level-label {
+  font-size: 11px;
+  font-weight: 800;
+  margin-bottom: 4px;
+  color: #000000;
+}
+
+/* Sub-header bar */
+.tr-sem-bar {
+  border: 1px solid #000000;
+  border-bottom: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 6px;
+  font-size: 10px;
+  font-weight: 800;
+  background: #ffffff;
+}
+
+/* Table */
+.tr-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #000000;
+  font-size: 9.5px;
+  background: #ffffff;
+}
+
+.tr-table th,
+.tr-table td {
+  border: 1px solid #000000;
+  padding: 3px 3px;
+  vertical-align: middle;
+}
+
+.tr-table th {
+  font-weight: 800;
+  text-align: center;
+  background: #ffffff;
+  font-size: 9.5px;
+}
+
+.tr-c-center {
+  text-align: center;
+}
+
+.tr-c-sn {
+  width: 24px;
+  text-align: center;
+}
+
+.tr-c-code {
+  width: 58px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.tr-c-title {
+  text-align: left;
+  line-height: 1.15;
+}
+
+.tr-c-num {
+  width: 22px;
+  text-align: center;
+}
+
+.tr-total-row td {
+  font-weight: 800;
+}
+
+.tr-total-label {
+  text-align: right;
+  font-weight: 800;
+  padding-right: 6px;
+}
+
+/* GPA Box */
+.tr-gpa-box {
+  border: 1px solid #000000;
+  border-top: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 800;
+  background: #ffffff;
+}
+
+/* ── Footer ── */
+.tr-footer {
+  margin-top: auto;
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  color: #111827;
+  font-family: Arial, sans-serif;
+}
+
+.tr-footer-url {
+  font-size: 10px;
+  color: #111827;
+}
+
+.tr-footer-page {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* ══════════════════════════════════════
+   PRINT MEDIA RULES
+══════════════════════════════════════ */
+@media print {
+  body, .tr-wrapper {
+    background: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .tr-actions {
+    display: none !important;
+  }
+
+  .tr-sheet {
+    box-shadow: none !important;
+    border: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 10mm 10mm !important;
+    margin: 0 !important;
+  }
+
+  @page {
+    margin: 8mm 8mm;
+    size: portrait;
+  }
+}
+
+@media (max-width: 768px) {
+  .tr-semesters-grid {
+    grid-template-columns: 1fr;
+  }
+  .tr-sheet {
+    padding: 16px 12px;
+  }
+}
