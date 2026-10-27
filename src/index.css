@@ -1,0 +1,483 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --fud-green: #0c7a41;
+  --fud-green-dark: #095c31;
+  --fud-green-deep: #0c3d24;
+  --fud-green-light: #e8f5ee;
+  --fud-green-mid: #12996a;
+  --fud-ink: #10241c;
+  --fud-muted: #64748b;
+  --fud-border: #e3e8ee;
+  --fud-danger: #d9483b;
+  --fud-info-bg: #f0f7ff;
+  --fud-info-border: #c8dff7;
+  --fud-info-icon: #3b82f6;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --shadow-card: 0 4px 32px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.08);
+}
+
+html, body, #root {
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Shell ── */
+.fud-shell {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(160deg, #0c3d24 0%, #0c7a41 45%, #12996a 100%);
+}
+
+/* ─────────────────────────────────────────
+   LEFT / BRAND PANEL
+───────────────────────────────────────── */
+.fud-brand-panel {
+  position: relative;
+  flex: 0 0 46%;
+  width: 46%;
+  padding: 40px 48px 40px 48px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  background:
+    linear-gradient(160deg, rgba(6,38,22,.93) 0%, rgba(12,122,65,.89) 60%, rgba(18,153,106,.86) 100%),
+    url('/fud-bg.jpg') center / cover no-repeat;
+  overflow-y: auto;
+}
+
+/* Logo bar */
+.fud-brand-top {
+  margin-bottom: 36px;
+}
+
+/* Banner image */
+.fud-banner-img {
+  height: 62px;
+  width: auto;
+  max-width: 320px;
+  object-fit: contain;
+  display: block;
+  background: #fff;
+  border-radius: 6px;
+  padding: 6px 12px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.10);
+}
+
+/* Headline */
+.fud-brand-panel h1 {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 0 0 14px;
+  color: #fff;
+  letter-spacing: -0.3px;
+}
+
+.fud-lead {
+  font-size: 15px;
+  line-height: 1.70;
+  color: rgba(255,255,255,.88);
+  margin: 0 0 16px;
+}
+
+.fud-lead a {
+  color: #5eead4;
+  text-decoration: none;
+}
+
+.fud-lead a:hover {
+  text-decoration: underline;
+}
+
+.fud-support {
+  font-size: 13.5px;
+  color: rgba(255,255,255,.80);
+  margin-bottom: 28px;
+}
+
+.fud-support a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: opacity 0.2s;
+}
+
+.fud-support a:hover {
+  opacity: 0.75;
+}
+
+/* Guide card */
+.fud-guide {
+  background: rgba(255,255,255,.09);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 12px;
+  padding: 4px 20px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  flex: 1;
+}
+
+.fud-guide-heading {
+  padding: 16px 0 12px;
+  font-weight: 700;
+  font-size: 14.5px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #fff;
+  margin: 0;
+}
+
+.fud-guide-body {
+  padding-bottom: 18px;
+  color: rgba(255,255,255,.88);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.fud-guide-body ol {
+  margin: 0 0 14px;
+  padding-left: 18px;
+}
+
+.fud-guide-body li {
+  margin-bottom: 7px;
+}
+
+.fud-guide-body b {
+  color: #fff;
+  font-weight: 600;
+}
+
+.fud-guide-note {
+  font-size: 12px;
+  color: rgba(255,255,255,.68);
+  border-top: 1px solid rgba(255,255,255,.12);
+  padding-top: 12px;
+  margin-top: 2px;
+  line-height: 1.65;
+  font-style: italic;
+}
+
+/* ─────────────────────────────────────────
+   RIGHT / LOGIN PANEL
+───────────────────────────────────────── */
+.fud-login-panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 32px;
+  background: #f5f7f6;
+}
+
+.fud-login-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.08);
+  padding: 36px 32px 30px;
+  width: 100%;
+  max-width: 410px;
+  animation: slideUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fud-card-title {
+  font-size: 21px;
+  font-weight: 800;
+  color: var(--fud-ink);
+  margin-bottom: 5px;
+  letter-spacing: -0.3px;
+}
+
+.fud-card-sub {
+  font-size: 13px;
+  color: var(--fud-muted);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* Info alert — matches Image 1 exact mint green styling */
+.fud-alert {
+  background: #eaf5ee;
+  border: 1px solid #cbe8d5;
+  border-radius: 6px;
+  padding: 11px 13px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 22px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #0d552e;
+}
+
+.fud-alert-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #0b6637;
+  width: 16px;
+  height: 16px;
+}
+
+.fud-alert strong {
+  font-weight: 700;
+  color: #0b6637;
+}
+
+/* Form */
+.fud-form-group {
+  margin-bottom: 16px;
+}
+
+.fud-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #111827;
+  margin-bottom: 7px;
+}
+
+.fud-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.fud-input-icon {
+  position: absolute;
+  left: 12px;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.fud-input {
+  width: 100%;
+  height: 44px;
+  padding: 10px 14px 10px 36px;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  font-size: 13.5px;
+  font-family: inherit;
+  color: #24292e;
+  background: #fafbfc;
+  transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
+  outline: none;
+}
+
+.fud-input::placeholder {
+  color: #6c757d;
+}
+
+.fud-input:focus {
+  background: #ffffff;
+  border-color: #0c7a41;
+  box-shadow: 0 0 0 3px rgba(12, 122, 65, 0.12);
+}
+
+.fud-input.has-toggle {
+  padding-right: 40px;
+}
+
+.fud-input.fud-input-error {
+  border-color: var(--fud-danger);
+}
+
+.fud-toggle-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.fud-toggle-btn:hover {
+  color: #0c7a41;
+}
+
+/* Forgot password */
+.fud-forgot-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.fud-forgot {
+  font-size: 12.5px;
+  color: #0c7a41;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.fud-forgot:hover {
+  text-decoration: underline;
+}
+
+/* Login button */
+.fud-btn-login {
+  width: 100%;
+  height: 46px;
+  padding: 0 16px;
+  background: #0d6938;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  letter-spacing: 0.15px;
+  transition: background 0.14s, transform 0.14s, box-shadow 0.18s;
+  box-shadow: 0 3px 12px rgba(13, 105, 56, 0.25);
+}
+
+.fud-btn-login:hover {
+  background: #09552c;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 16px rgba(13, 105, 56, 0.32);
+}
+
+.fud-btn-login:active {
+  transform: translateY(0);
+}
+
+.fud-btn-login:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.spinner {
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(255,255,255,0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.65s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Divider */
+.fud-divider {
+  border: none;
+  border-top: 1px solid #f1f5f9;
+  margin: 22px 0 16px;
+}
+
+/* Admission link */
+.fud-admission-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #4b5563;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.fud-admission-link:hover {
+  color: #0c7a41;
+}
+
+.fud-admission-link svg {
+  color: #4b5563;
+  transition: color 0.2s;
+}
+
+.fud-admission-link:hover svg {
+  color: #0c7a41;
+}
+
+/* Error message */
+.fud-error-msg {
+  font-size: 12px;
+  color: var(--fud-danger);
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Toast */
+.fud-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  padding: 13px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--fud-ink);
+  animation: toastIn 0.3s cubic-bezier(0.22,1,0.36,1) both;
+  z-index: 9999;
+  min-width: 260px;
+  border-left: 4px solid var(--fud-danger);
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+@media (max-width: 820px) {
+  .fud-shell {
+    flex-direction: column;
+  }
+  .fud-brand-panel {
+    flex: none;
+    width: 100%;
+    padding: 28px 22px;
+  }
+  .fud-brand-panel h1 {
+    font-size: 24px;
+  }
+  .fud-login-panel {
+    padding: 28px 16px 44px;
+  }
+  .fud-login-card {
+    padding: 24px 20px 20px;
+  }
+}
