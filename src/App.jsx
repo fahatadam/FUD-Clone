@@ -137,8 +137,15 @@ function LoginCard({ onLogin }) {
 
   const validate = () => {
     const e = {}
-    if (!username.trim()) e.username = 'Username / Registration number is required'
-    if (!password.trim()) e.password = 'Password is required'
+    const trimmedUser = username.trim()
+    if (!trimmedUser) {
+      e.username = 'Username / Registration number is required'
+    } else if (trimmedUser.toLowerCase() !== 'fcp/cit/25/2001') {
+      e.username = 'Invalid Registration Number. Access restricted.'
+    }
+    if (!password.trim()) {
+      e.password = 'Password is required'
+    }
     return e
   }
 
@@ -151,7 +158,12 @@ function LoginCard({ onLogin }) {
     e.preventDefault()
     const errs = validate()
     setErrors(errs)
-    if (Object.keys(errs).length) return
+    if (Object.keys(errs).length) {
+      if (errs.username && username.trim() && username.trim().toLowerCase() !== 'fcp/cit/25/2001') {
+        showToast('Invalid Registration Number. Access restricted.')
+      }
+      return
+    }
     setLoading(true)
     await new Promise(r => setTimeout(r, 1200))
     setLoading(false)
