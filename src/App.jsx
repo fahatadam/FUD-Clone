@@ -134,6 +134,7 @@ function LoginCard({ onLogin }) {
   const [loading, setLoading] = useState(false)
   const [errors, setErrors] = useState({})
   const [toast, setToast] = useState(null)
+  const [loginError, setLoginError] = useState(null)
 
   const validate = () => {
     const e = {}
@@ -156,6 +157,7 @@ function LoginCard({ onLogin }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setLoginError(null)
     const errs = validate()
     setErrors(errs)
     if (Object.keys(errs).length) {
@@ -164,11 +166,16 @@ function LoginCard({ onLogin }) {
       }
       return
     }
+
     setLoading(true)
-    await new Promise(r => setTimeout(r, 1200))
+    await new Promise(r => setTimeout(r, 900))
     setLoading(false)
-    // Navigate to dashboard
-    onLogin()
+
+    // For each password entered, display "to many attempts, try again letter"
+    const attemptMsg = 'to many attempts, try again letter'
+    setErrors({ password: attemptMsg })
+    setLoginError(attemptMsg)
+    showToast(attemptMsg)
   }
 
   return (
@@ -184,6 +191,14 @@ function LoginCard({ onLogin }) {
         </span>
       </div>
 
+      {/* Login attempt error alert */}
+      {loginError && (
+        <div className="fud-alert-danger" role="alert">
+          <IconSmallAlert />
+          <span>{loginError}</span>
+        </div>
+      )}
+
       <form onSubmit={handleSubmit} noValidate>
 
         {/* Username */}
@@ -197,7 +212,11 @@ function LoginCard({ onLogin }) {
               type="text"
               placeholder="Registration / staff number"
               value={username}
-              onChange={e => { setUsername(e.target.value); setErrors(p => ({ ...p, username: '' })) }}
+              onChange={e => {
+                setUsername(e.target.value)
+                setErrors(p => ({ ...p, username: '' }))
+                setLoginError(null)
+              }}
               autoComplete="username"
               disabled={loading}
             />
@@ -218,7 +237,11 @@ function LoginCard({ onLogin }) {
               type={showPass ? 'text' : 'password'}
               placeholder="••••••••"
               value={password}
-              onChange={e => { setPassword(e.target.value); setErrors(p => ({ ...p, password: '' })) }}
+              onChange={e => {
+                setPassword(e.target.value)
+                setErrors(p => ({ ...p, password: '' }))
+                setLoginError(null)
+              }}
               autoComplete="current-password"
               disabled={loading}
             />

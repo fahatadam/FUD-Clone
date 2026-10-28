@@ -239,6 +239,29 @@ html, body, #root {
   color: #0b6637;
 }
 
+.fud-alert-danger {
+  background: #fdf2f2;
+  border: 1px solid #f8b4b4;
+  border-radius: 6px;
+  padding: 11px 14px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 18px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #9b1c1c;
+  font-weight: 500;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.fud-alert-danger svg {
+  flex-shrink: 0;
+  color: #e02424;
+  width: 16px;
+  height: 16px;
+}
+
 /* Form */
 .fud-form-group {
   margin-bottom: 16px;
