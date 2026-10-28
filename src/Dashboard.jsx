@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import './Dashboard.css'
 
 /* ══════════════════════════════════════
@@ -238,7 +238,27 @@ function Sidebar({ open, close, active, setActive, onOpenTranscript }) {
 /* ══════════════════════════════════════
    TOPBAR
 ══════════════════════════════════════ */
-function TopBar({ toggle }) {
+function TopBar({ toggle, onLogout }) {
+  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const [showPasswordModal, setShowPasswordModal] = useState(false)
+  const [passData, setPassData] = useState({ current: '', next: '', confirm: '' })
+  const [passMsg, setPassMsg] = useState(null)
+  const menuRef = useRef(null)
+
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setDropdownOpen(false)
+      }
+    }
+    if (dropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [dropdownOpen])
+
   return (
     <div className="db-top-wrapper">
       <header className="db-top">
@@ -248,14 +268,128 @@ function TopBar({ toggle }) {
           </button>
           <span className="db-top-title">Student</span>
         </div>
-        <div className="db-top-user">
-          <span className="db-top-avatar">
-            <IcUserTie />
-          </span>
-          <span className="db-top-regno">FCP/CIT/25/2001</span>
-          <IcChevDown size={12} />
+        <div className="db-top-user-wrap" ref={menuRef}>
+          <div
+            className="db-top-user"
+            onClick={() => setDropdownOpen(v => !v)}
+            role="button"
+            tabIndex={0}
+          >
+            <span className="db-top-avatar">
+              <IcUserTie />
+            </span>
+            <span className="db-top-regno">FCP/CIT/25/2001</span>
+            <IcChevDown size={12} />
+          </div>
+
+          {dropdownOpen && (
+            <div className="db-user-dropdown">
+              <button
+                type="button"
+                className="db-user-dropdown-item"
+                onClick={() => {
+                  setDropdownOpen(false)
+                  setShowPasswordModal(true)
+                }}
+              >
+                Change Password
+              </button>
+              <button
+                type="button"
+                className="db-user-dropdown-item"
+                onClick={() => {
+                  setDropdownOpen(false)
+                  if (onLogout) onLogout()
+                }}
+              >
+                Log Out
+              </button>
+            </div>
+          )}
         </div>
       </header>
+
+      {/* Change Password Modal */}
+      {showPasswordModal && (
+        <div className="db-modal-overlay" onClick={() => setShowPasswordModal(false)}>
+          <div className="db-modal-card" onClick={e => e.stopPropagation()}>
+            <div className="db-modal-header">
+              <h3>Change Password</h3>
+              <button
+                type="button"
+                className="db-modal-close"
+                onClick={() => setShowPasswordModal(false)}
+              >
+                ×
+              </button>
+            </div>
+            <form
+              onSubmit={e => {
+                e.preventDefault()
+                if (!passData.current || !passData.next || !passData.confirm) {
+                  setPassMsg({ type: 'error', text: 'All fields are required' })
+                  return
+                }
+                if (passData.next !== passData.confirm) {
+                  setPassMsg({ type: 'error', text: 'New passwords do not match' })
+                  return
+                }
+                setPassMsg({ type: 'success', text: 'Password changed successfully!' })
+                setTimeout(() => {
+                  setShowPasswordModal(false)
+                  setPassMsg(null)
+                  setPassData({ current: '', next: '', confirm: '' })
+                }, 1200)
+              }}
+            >
+              {passMsg && (
+                <div className={`db-modal-alert ${passMsg.type}`}>
+                  {passMsg.text}
+                </div>
+              )}
+              <div className="db-modal-field">
+                <label>Current Password</label>
+                <input
+                  type="password"
+                  value={passData.current}
+                  onChange={e => setPassData(p => ({ ...p, current: e.target.value }))}
+                  placeholder="Enter current password"
+                />
+              </div>
+              <div className="db-modal-field">
+                <label>New Password</label>
+                <input
+                  type="password"
+                  value={passData.next}
+                  onChange={e => setPassData(p => ({ ...p, next: e.target.value }))}
+                  placeholder="Enter new password"
+                />
+              </div>
+              <div className="db-modal-field">
+                <label>Confirm New Password</label>
+                <input
+                  type="password"
+                  value={passData.confirm}
+                  onChange={e => setPassData(p => ({ ...p, confirm: e.target.value }))}
+                  placeholder="Confirm new password"
+                />
+              </div>
+              <div className="db-modal-actions">
+                <button
+                  type="button"
+                  className="db-btn-cancel"
+                  onClick={() => setShowPasswordModal(false)}
+                >
+                  Cancel
+                </button>
+                <button type="submit" className="db-btn-submit">
+                  Save Changes
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
@@ -401,7 +535,7 @@ export default function Dashboard({ onLogout, onOpenDataForm, onOpenTranscript }
         onOpenTranscript={onOpenTranscript}
       />
       <div className="db-main">
-        <TopBar toggle={() => setOpen(v => !v)} />
+        <TopBar toggle={() => setOpen(v => !v)} onLogout={onLogout} />
         <Body onOpenDataForm={onOpenDataForm} />
         <Footer />
       </div>
